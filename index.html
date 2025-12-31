@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6834526241041119" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="-z9DAPzX-Yzd8hPw-wDCrYLW13maGYRSDCWd1o9ifd8" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Codenify | Free Developer Tools Suite</title>
+    <meta name="description" content="Free online developer tools: QR Code Generator, JSON Formatter, CSS Minifier, and Base64 Converter. Fast, secure, and mobile-friendly.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #D4AF37; --bg-dark: #050505; --card-bg: #141414; --text-white: #ffffff; --border: #333; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-white); margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        * { box-sizing: border-box; }
+
+        /* HEADER */
+        header { padding: 20px 5%; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #080808; position: sticky; top: 0; z-index: 100; }
+        .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; font-weight: 700; font-size: 1.2rem; }
+        .logo-box { color: var(--gold); border: 1px solid var(--gold); padding: 5px 10px; border-radius: 6px; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; font-weight: 500; }
+        nav a:hover, nav a.active { color: var(--gold); }
+
+        /* HERO */
+        .hero { text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--gold); line-height: 1.2; }
+        .hero p { color: #ccc; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* GRID SYSTEM */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--card-bg); padding: 40px; border-radius: 16px; border: 1px solid var(--border); text-decoration: none; transition: 0.3s; display: block; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .card h3 { color: var(--gold); margin-top: 0; margin-bottom: 10px; font-size: 1.5rem; }
+        .card p { color: #aaa; font-size: 0.95rem; line-height: 1.5; }
+
+        /* SEO CONTENT */
+        .seo-section { max-width: 900px; margin: 60px auto; padding: 40px 20px; border-top: 1px solid var(--border); }
+        .seo-section h2 { color: var(--gold); }
+        .seo-section p, .seo-section li { color: #ccc; line-height: 1.6; margin-bottom: 15px; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--border); margin-top: auto; color: #666; font-size: 0.9rem; }
+        .footer-links { margin-top: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { color: #888; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--gold); }
+
+        /* --- PERBAIKAN KHUSUS MOBILE (Responsive Fix) --- */
+        @media (max-width: 768px) {
+            /* Header menumpuk rapi */
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
+            
+            /* Font judul dikecilkan sedikit agar tidak nabrak */
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            
+            /* Grid dipaksa 1 kolom penuh agar kartu besar & jelas */
+            .grid { grid-template-columns: 1fr; padding: 0 20px; gap: 20px; }
+            
+            /* Padding kartu dikurangi agar konten muat */
+            .card { padding: 25px; }
+            .card h3 { font-size: 1.3rem; }
+            
+            /* Footer link turun ke bawah jika sempit */
+            .footer-links { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="brand"><div class="logo-box">C</div> Codenify</a>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="qrcode.html">QR Gen</a>
+        <a href="json.html">JSON</a>
+        <a href="css.html">CSS</a>
+        <a href="base64.html">Base64</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Developer Tools Suite</h1>
+    <p>A collection of essential online tools for developers, designers, and digital creators. Free, fast, and secure.</p>
+</div>
+
+<div class="grid">
+    <a href="qrcode.html" class="card"><h3>📱 QR Code Generator</h3><p>Create custom QR codes with logo, colors, and frames instantly.</p></a>
+    <a href="json.html" class="card"><h3>Running JSON Formatter</h3><p>Validate, beautify, and minify your JSON data for debugging.</p></a>
+    <a href="css.html" class="card"><h3>🎨 CSS Minifier</h3><p>Compress CSS code to optimize website loading speed.</p></a>
+    <a href="base64.html" class="card"><h3>🔒 Base64 Converter</h3><p>Encode and decode text to Base64 format securely.</p></a>
+</div>
+
+<section class="seo-section">
+    <h2>Why Use Codenify Tools?</h2>
+    <p>Codenify provides a robust suite of client-side developer tools. We prioritize <strong>privacy</strong> and <strong>speed</strong>. Unlike server-side tools, your data (JSON, Code, Text) never leaves your browser.</p>
+    <h3>Key Features</h3>
+    <ul>
+        <li><strong>No Installation:</strong> Access all tools directly from your web browser.</li>
+        <li><strong>Mobile Optimized:</strong> Works perfectly on smartphones and tablets.</li>
+        <li><strong>Instant Processing:</strong> Real-time conversion without page reloads.</li>
+    </ul>
+</section>
+
+<footer>
+    <div>&copy; 2025 Codenify App. All Rights Reserved.</div>
+    <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+</footer>
+
+</body>
+</html>

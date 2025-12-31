@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://codenify.app/sitemap.xml
