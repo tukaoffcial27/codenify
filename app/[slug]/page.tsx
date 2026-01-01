@@ -36,49 +36,43 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-10">
             The most reliable and secure <strong>{item.tool}</strong> tailor-made for <strong>{item.useCase}</strong>. Process your data instantly without leaving your browser.
           </p>
-          <Link href={`/${item.toolSlug}`} className="bg-[#D4AF37] text-black px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition inline-block">
+          {/* Tombol kembali ke home karena tool utama biasanya ada di halaman depan */}
+          <Link href="/" className="bg-[#D4AF37] text-black px-10 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition inline-all">
             Open {item.tool} Tool Now
           </Link>
         </div>
 
-        {/* EDUCATIONAL CONTENT FOR ADSENSE */}
+        {/* CONTENT FOR ADSENSE & SEO */}
         <div className="grid md:grid-cols-3 gap-12 border-t border-[#333] pt-16">
           <div className="md:col-span-2 space-y-10">
             <section>
               <h2 className="text-2xl font-bold text-[#D4AF37] mb-4">Why use {item.tool} for {item.useCase}?</h2>
               <p className="text-gray-300 leading-relaxed">
-                In the world of modern development, efficiency is everything. Using a dedicated <strong>{item.tool}</strong> for <strong>{item.useCase}</strong> ensures that your output meets the exact standards required by current industry protocols. Our tool is built to handle complex data structures while maintaining maximum performance.
+                Using a dedicated <strong>{item.tool}</strong> for <strong>{item.useCase}</strong> ensures that your output meets the exact standards required by current industry protocols.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-[#D4AF37] mb-4">Key Benefits for {item.useCase}</h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                When working on <strong>{item.useCase}</strong> projects, security and privacy are paramount. Unlike other tools that process data on their servers, Codenify works 100% client-side.
-              </p>
+              <h2 className="text-2xl font-bold text-[#D4AF37] mb-4">Key Benefits</h2>
               <ul className="list-disc pl-6 text-gray-400 space-y-2">
-                <li><strong>Zero Data Leakage:</strong> Your source code or personal data never leaves your machine.</li>
-                <li><strong>Format Compliance:</strong> Output is specifically formatted for {item.useCase} integration.</li>
-                <li><strong>Lightning Fast:</strong> No server round-trips mean instant results even on slow connections.</li>
+                <li><strong>Zero Data Leakage:</strong> 100% client-side processing.</li>
+                <li><strong>Format Compliance:</strong> Specifically for {item.useCase}.</li>
+                <li><strong>Instant Results:</strong> No server round-trips.</li>
               </ul>
             </section>
           </div>
 
-          {/* SIDEBAR / ADS PLACEHOLDER */}
           <div className="space-y-8">
             <div className="bg-[#141414] p-6 rounded-xl border border-[#333]">
               <h4 className="text-[#D4AF37] font-bold mb-4">Developer Note</h4>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Integrating {item.tool} into your {item.useCase} workflow can reduce debugging time by up to 40%. Always ensure your data is minified before production.
+                Integrating {item.tool} into your {item.useCase} workflow can reduce debugging time significantly.
               </p>
             </div>
           </div>
         </div>
       </main>
-
-      <footer className="text-center py-12 border-t border-[#333] text-gray-600">
-          &copy; 2026 Codenify App — Optimized for {item.useCase}
-      </footer>
+      {/* Footer sudah dihapus dari sini karena sudah ada di layout.tsx */}
     </div>
   );
 }
