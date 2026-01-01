@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Codenify</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { background: #050505; color: #fff; font-family: 'Inter', sans-serif; padding: 40px; line-height: 1.6; max-width: 800px; margin: 0 auto; }
-        h1 { color: #D4AF37; }
-        h2 { margin-top: 30px; color: #ccc; }
-        a { color: #D4AF37; text-decoration: none; }
-        .back-btn { display: inline-block; margin-bottom: 20px; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; }
-    </style>
-</head>
-<body>
-    <a href="index.html" class="back-btn">← Back to Generator</a>
-    <h1>Terms of Service</h1>
-    
-    <h2>1. Terms</h2>
-    <p>By accessing this Website, accessible from https://codenify.app, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws.</p>
+import Link from 'next/link';
 
-    <h2>2. Use License</h2>
-    <p>Permission is granted to temporarily download one copy of the materials on Codenify's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.</p>
-
-    <h2>3. Disclaimer</h2>
-    <p>All the materials on Codenify's Website are provided "as is". Codenify makes no warranties, may it be expressed or implied, therefore negates all other warranties.</p>
-</body>
-</html>
+export default function TermsPage() {
+  return (
+    <main className="p-8 max-w-4xl mx-auto text-white">
+      <Link href="/" className="inline-block mb-6 text-[#D4AF37] hover:underline">
+        &larr; Back to Home
+      </Link>
+      <h1 className="text-4xl font-bold mb-6 text-[#D4AF37]">Terms of Service</h1>
+      <div className="space-y-4 text-gray-300">
+        <p>By accessing this website, you are agreeing to be bound by these website Terms and Conditions of Use.</p>
+        <h2 className="text-xl font-semibold text-white mt-6">Use License</h2>
+        <p>Permission is granted to temporarily download one copy of the materials on Codenify's website for personal, non-commercial transitory viewing only.</p>
+        <h2 className="text-xl font-semibold text-white mt-6">Disclaimer</h2>
+        <p>The materials on Codenify's website are provided on an 'as is' basis.</p>
+      </div>
+    </main>
+  );
+}
