@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// Jalur ini sudah benar karena globals.css dan layout.tsx berada di folder yang sama (app)
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,8 +10,11 @@ export const metadata: Metadata = {
     template: "%s | Codenify"
   },
   description: "Free online developer tools: QR Code Generator, JSON Formatter, CSS Minifier, and Base64 Converter. Fast, secure, and mobile-friendly.",
+  // Penambahan baris di bawah ini untuk menghilangkan error favicon
+  icons: {
+    icon: [],
+  },
   verification: {
-    // Verifikasi Google Search Console Anda
     google: '-z9DAPzX-Yzd8hPw-wDCrYLW13maGYRSDCWd1o9ifd8',
   },
   robots: {
@@ -37,7 +39,6 @@ export default function RootLayout({
         </script>
       </head>
       <body className={`${inter.className} bg-[#050505] text-white antialiased`}>
-        {/* Seluruh konten halaman akan muncul di sini */}
         {children}
         
         <footer className="text-center py-10 border-t border-[#333] text-gray-500 text-sm">
