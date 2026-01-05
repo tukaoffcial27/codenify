@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense Script */}
+        {/* Google AdSense Main Script */}
         <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6834526241041119"
@@ -38,8 +38,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
 
+        {/* UNIT IKLAN DISPLAY ADSENSE */}
+        <div className="max-w-7xl mx-auto px-6 py-10 w-full overflow-hidden">
+          <ins className="adsbygoogle"
+               style={{ display: 'block' }}
+               data-ad-client="ca-pub-6834526241041119"
+               data-ad-slot="4969932592"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: '(adsbygoogle = window.adsbygoogle || []).push({});',
+            }}
+          />
+        </div>
+
         {/* FOOTER */}
-        <footer className="bg-[#0a0a0a] border-t border-[#222] py-16 px-6 mt-20">
+        <footer className="bg-[#0a0a0a] border-t border-[#222] py-16 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
             <div>
               <h3 className="text-[#D4AF37] font-bold text-xl mb-4">CODENIFY</h3>
