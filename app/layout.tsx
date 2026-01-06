@@ -15,12 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Google AdSense Main Script */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6834526241041119"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <body className={`${inter.className} bg-[#050505] text-white antialiased`}>
         {/* TOP NAVIGATION */}
@@ -37,21 +31,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </nav>
 
         {children}
-
-        {/* UNIT IKLAN DISPLAY ADSENSE */}
-        <div className="max-w-7xl mx-auto px-6 py-10 w-full overflow-hidden">
-          <ins className="adsbygoogle"
-               style={{ display: 'block' }}
-               data-ad-client="ca-pub-6834526241041119"
-               data-ad-slot="4969932592"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: '(adsbygoogle = window.adsbygoogle || []).push({});',
-            }}
-          />
-        </div>
 
         {/* FOOTER */}
         <footer className="bg-[#0a0a0a] border-t border-[#222] py-16 px-6">
