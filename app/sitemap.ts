@@ -1,34 +1,41 @@
 import { MetadataRoute } from 'next';
-import data from '../global.json';
+import { getAllToolSlugs, getUniqueTools, slugify } from '@/lib/data-loader';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://codenify.app';
 
-  // 1. Daftar Halaman Statis & Tools Utama
+  // 1. HALAMAN UTAMA & DIREKTORI (Priority Tinggi)
   const staticPages = [
-    '',
-    '/qr-generator',
-    '/json-formatter',
-    '/css-minifier',
-    '/base64-converter',
-    '/about',
-    '/contact',
-    '/privacy',
-    '/terms',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
-  }));
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/directory`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+  ];
 
-  // 2. Daftar 1000+ Halaman pSEO secara Dinamis
-  const dynamicPages = data.map((item) => ({
-    url: `${baseUrl}/${item.slug}`,
+  // 2. HALAMAN KATEGORI (Level 2.5 dalam Pohon Link)
+  const toolCategories = getUniqueTools().map((tool) => ({
+    url: `${baseUrl}/directory/${slugify(tool)}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  // 3. HALAMAN pSEO (20.000 HALAMAN)
+  const pSEOPages = getAllToolSlugs().map((item) => ({
+    url: `${baseUrl}/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
 
-  return [...staticPages, ...dynamicPages];
+  // MENGGABUNGKAN SEMUA LINK MENJADI SATU SITEMAP BESAR
+  return [...staticPages, ...toolCategories, ...pSEOPages];
 }

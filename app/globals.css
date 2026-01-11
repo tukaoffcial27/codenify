@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+body {
+  background-color: #050505;
+  color: #ffffff; /* Putih tajam untuk teks utama */
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+/* Menajamkan Font Abu-abu agar tidak Blur */
+.text-gray-400 {
+  color: #a1a1aa !important; /* Abu-abu yang lebih cerah dan tajam */
+}
+
+.text-gray-500 {
+  color: #71717a !important;
+}
+
+/* Luxury Card Effect */
+.luxury-card {
+  @apply bg-[#0a0a0a] border border-[#222] hover:border-[#D4AF37]/50 transition-all duration-500;
 }
