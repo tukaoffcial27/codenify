@@ -2,18 +2,32 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script"; // <-- 1. IMPORT SCRIPT DARI NEXT.JS
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Codenify | Professional Developer Tools Suite",
   description: "Secure, high-fidelity developer tools. 100% client-side processing for global engineering teams.",
+  // Kode Verifikasi Google Search Console (dari diskusi sebelumnya)
+  verification: {
+    google: "-z9DAPzX-Yzd8hPw-wDCrYLW13maGYRSDCWd1o9ifd8",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#050505] text-white antialiased flex flex-col min-h-screen`}>
+        {/* 2. SCRIPT ADSENSE OTOMATIS */}
+        {/* Menggunakan Publisher ID dari konten ads.txt Anda: pub-6834526241041119 */}
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6834526241041119"
+        />
+
         {/* LUXURY NAVIGATION WITH WORKING MOBILE MENU */}
         <nav className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-[#D4AF37]/20">
           <div className="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center relative">
@@ -36,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="w-6 h-0.5 bg-[#D4AF37]"></div>
                 <div className="w-4 h-0.5 bg-[#D4AF37] self-end"></div>
                 
-                {/* MOBILE MENU LIST - Muncul saat diklik */}
+                {/* MOBILE MENU LIST */}
                 <div className="fixed inset-0 bg-black flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none peer-checked:opacity-100 peer-checked:pointer-events-auto transition-all duration-300 -z-10 h-screen w-screen left-0 top-0">
                   <Link href="/directory" className="text-[#D4AF37] font-black text-xl uppercase tracking-widest">Directory</Link>
                   <Link href="/methodology" className="text-[#D4AF37] font-black text-xl uppercase tracking-widest">Methodology</Link>
@@ -50,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <div className="flex-grow">{children}</div>
 
-        {/* ELEGANT FOOTER - SITEMAP TETAP DIHAPUS */}
         <footer className="bg-[#080808] border-t border-[#D4AF37]/10 py-20 px-6 mt-auto">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div className="space-y-6">
